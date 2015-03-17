@@ -1,0 +1,33 @@
+div {
+
+    margin: 1em;
+
+}
+
+.bookreview {
+  width: 250px;
+  height: 500px;
+  text-align: center;
+  float: left;
+  clear: bottom;
+  padding:1em;
+  border: 1px solid black;
+  overflow: auto;
+}
+
+img {
+  margin:10px;
+}
+
+#user {
+  text-align: right;
+  border:none;
+}
+
+#books {
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
