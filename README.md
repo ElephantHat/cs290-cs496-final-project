@@ -6,28 +6,35 @@ API Endpoints:
 All endpoints are prepended with: http://burleigb-final.appspot.com/
 
 /
+
   GET|POST: Loads main login page.
 
 /login
+
   POST: Takes login credentials and creates new user or logs in existing user. Returns auth token.
 
 /book
+
   GET: Returns a list of all the book reviews created by the user who requested it.
 
   POST: Adds a new book review to the database.
 
 /book/<id number>
+
   GET: Returns the book review specified by the id number.
 
   PUT: Updates the book review specified by the id number.
 
 /book/<id number>/<token>
+
   DELETE: Deletes book review specified by the id number. Token is passed as kwarg because DELETE does not allow for data payload.
 
 /public
+
   GET: Returns all book reviews that have been indicated as publicly visible
 
 /public/<id number>
+
   GET: Returns publicly visible book review specified by id number. Will not return private reviews.
 
 Any HTTP request methods not listed are not supported.
