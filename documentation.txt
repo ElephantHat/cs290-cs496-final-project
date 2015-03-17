@@ -1,5 +1,7 @@
 API Endpoints:
 
+All endpoints are prepended with: http://burleigb-final.appspot.com/
+
 /
   GET|POST: Loads main login page.
 
