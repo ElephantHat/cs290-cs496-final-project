@@ -1,5 +1,6 @@
 import webapp2
 from google.appengine.ext import ndb
+from cgi import escape
 import json
 import db_defs
 import random
@@ -42,7 +43,7 @@ class Login(webapp2.RequestHandler):
                 if password:
                     newUser.uname = username
                     newUser.pw = password
-                    newUser.name = name
+                    newUser.name = escape(name)
 
                     #generate unique access token
                     while True:

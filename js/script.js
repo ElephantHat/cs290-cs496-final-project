@@ -49,7 +49,8 @@ function loadBooks(){
 
     success:function(html) {
       $('#content').html(html);
-      $('#publicButton').removeClass('hidden');
+      if(sessionStorage.getItem('token') !== null)
+        $('#publicButton').removeClass('hidden');
 
     },
     error: function(html){
@@ -265,6 +266,7 @@ function logout(){
         $('#content').html(html);
         $('#books').empty();
         $('#user').empty();
+        $('#publicButton').addClass('hidden');
 
       },
       error: function(html){

@@ -1,5 +1,6 @@
 import webapp2
 from google.appengine.ext import ndb
+from cgi import escape
 import json
 import db_defs
 import random
@@ -95,13 +96,13 @@ class Book(webapp2.RequestHandler):
                 self.response.write(json.dumps({'msg': 'Book title is required.'}))
                 return
             else:
-                newBook.title = title
+                newBook.title = escape(title)
 
             if not author:
                 self.response.write(json.dumps({'msg': 'Book author is required.'}))
                 return
             else:
-                newBook.author = author
+                newBook.author = escape(author)
 
             if not rating:
                 self.response.write(json.dumps({'msg': 'Book rating is required..'}))
@@ -121,7 +122,7 @@ class Book(webapp2.RequestHandler):
 
             newBook.coverurl = coverurl
 
-            newBook.comment = comment
+            newBook.comment = escape(comment)
 
             print newBook.to_dict()
 
@@ -182,13 +183,13 @@ class Book(webapp2.RequestHandler):
             self.response.write(json.dumps({'msg': 'Book title is required.'}))
             return
         else:
-            newBook.title = title
+            newBook.title = escape(title)
 
         if not author:
             self.response.write(json.dumps({'msg': 'Book author is required.'}))
             return
         else:
-            newBook.author = author
+            newBook.author = escape(author)
 
         if not rating:
             self.response.write(json.dumps({'msg': 'Book rating is required..'}))
@@ -212,7 +213,7 @@ class Book(webapp2.RequestHandler):
         if comment == "":
             newBook.comment = "No comment."
         else:
-            newBook.comment = comment
+            newBook.comment = escape(comment)
 
         if lat:
             newBook.lat = float(lat)
